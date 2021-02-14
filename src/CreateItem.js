@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react';
 import { ItemsContext } from './ItemsContext';
 
 const CreateItem = () => {
-  const [date, setDate] = useState();
-  const [amount, setAmount] = useState();
-  const [shopName, setShopName] = useState();
-  const [itemDescription, setItemDescription] = useState();
+  const [date, setDate] = useState('');
+  const [amount, setAmount] = useState('');
+  const [shopName, setShopName] = useState('');
+  const [itemDescription, setItemDescription] = useState('');
   const { listOfItems, setListOfItems } = useContext(ItemsContext);
 
   const addItem = (event) => {
@@ -27,19 +27,18 @@ const CreateItem = () => {
   };
 
   return (
-    <form className='newItem' onSubmit={addItem}>
-      <label>
-        Data
+    <form className='new-item' onSubmit={addItem}>
+      <div>
+        <label>Data</label>
         <input
           type='date'
           name='date'
           value={date}
           onChange={(e) => setDate(e.target.value)}
         ></input>
-      </label>
-
-      <label>
-        Kwota
+      </div>
+      <div>
+        <label>Kwota</label>
         <input
           type='text'
           name='amount'
@@ -47,27 +46,26 @@ const CreateItem = () => {
           step='.01'
           onChange={(e) => setAmount(e.target.value)}
         ></input>
-      </label>
-
-      <label>
-        Sklep
+      </div>
+      <div>
+        <label>Sklep</label>
         <input
           type='text'
           name='shopName'
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
         ></input>
-      </label>
-
-      <label>
-        Opis
-        <input
-          type='text'
+      </div>
+      <div>
+        <label>Opis</label>
+        <textarea
+          rows='4'
+          // cols='20'
           name='desctiption'
           value={itemDescription}
           onChange={(e) => setItemDescription(e.target.value)}
-        ></input>
-      </label>
+        ></textarea>
+      </div>
 
       <button>Dodaj</button>
     </form>

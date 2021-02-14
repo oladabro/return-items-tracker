@@ -8,17 +8,10 @@ const Item = ({ date, amount, shopName, itemDescription, id }) => {
   const markCompletedItem = (id) => {
     const itemCompleted = listOfItems.filter((el) => el.id == id);
 
-    console.log(itemCompleted);
-
     const listOfItemsFiltered = listOfItems.filter((el) => el.id !== id);
     setListOfItems(listOfItemsFiltered);
-
-    setItemsCompleted([...itemsCompleted, ...itemCompleted]);
-
-    console.log(itemsCompleted);
+    setItemsCompleted([...itemCompleted, ...itemsCompleted]);
   };
-
-  console.log(itemsCompleted);
 
   return (
     <>

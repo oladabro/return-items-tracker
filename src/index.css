@@ -69,11 +69,6 @@ code {
 
 /* add item */
 
-.newItem {
-  display: flex;
-  flex-direction: column;
-}
-
 .item-completed {
   margin-top: 30px;
 }
@@ -89,4 +84,25 @@ code {
   left: 0;
   border-bottom: 1px solid gray;
   width: 100%;
+}
+
+.item-completed .btn {
+  /* display: none; */
+}
+
+/* form styling */
+
+/* .new-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+.new-item label {
+  width: 40vw;
+  margin-top: 20px;
+}
+
+.new-item input,
+textarea {
+  margin-left: 20px;
 }
