@@ -27,8 +27,12 @@ export const ItemsContextProvider = (props) => {
     },
   ]);
 
+  const [itemsCompleted, setItemsCompleted] = useState([]);
+
   return (
-    <ItemsContext.Provider value={[listOfItems, setListOfItems]}>
+    <ItemsContext.Provider
+      value={{ listOfItems, setListOfItems, itemsCompleted, setItemsCompleted }}
+    >
       {props.children}
     </ItemsContext.Provider>
   );

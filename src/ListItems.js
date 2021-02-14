@@ -3,7 +3,7 @@ import Item from './Item';
 import { ItemsContext } from './ItemsContext';
 
 const ListItems = () => {
-  const [listOfItems, setListOfItems] = useContext(ItemsContext);
+  const { listOfItems, setListOfItems } = useContext(ItemsContext);
   return (
     <>
       <div className='table-header'>
@@ -21,6 +21,7 @@ const ListItems = () => {
             shopName={item.shopName}
             itemDescription={item.itemDescription}
             key={item.id}
+            id={item.id}
           />
         );
       })}

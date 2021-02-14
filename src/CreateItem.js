@@ -6,7 +6,7 @@ const CreateItem = () => {
   const [amount, setAmount] = useState();
   const [shopName, setShopName] = useState();
   const [itemDescription, setItemDescription] = useState();
-  const [listOfItems, setListOfItems] = useContext(ItemsContext);
+  const { listOfItems, setListOfItems } = useContext(ItemsContext);
 
   const addItem = (event) => {
     event.preventDefault();
@@ -19,6 +19,11 @@ const CreateItem = () => {
       itemDescription,
     };
     setListOfItems((prevListOfItems) => [...prevListOfItems, newItem]);
+
+    setDate('');
+    setAmount('');
+    setShopName('');
+    setItemDescription('');
   };
 
   return (
