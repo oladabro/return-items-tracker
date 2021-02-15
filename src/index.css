@@ -5,8 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url('./images/curls.png');
 }
 
+* {
+  box-sizing: border-box;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -24,15 +30,17 @@ code {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
   width: 80vw;
+  background-color: #ffffff;
 }
 .table-header {
   margin-top: 50px;
   font-weight: 700;
-  background-color: rgb(34, 152, 231);
+  background-color: rgb(224, 126, 14);
 }
 
 .table-item {
   border-bottom: 1px solid rgb(190, 188, 188);
+  background-color: #ffffff;
 }
 
 .date {
@@ -71,6 +79,7 @@ code {
 
 .item-completed {
   margin-top: 30px;
+  background-color: #ffffff;
 }
 
 .item-completed .table-item {
@@ -92,11 +101,13 @@ code {
 
 /* form styling */
 
-/* .new-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+.container {
+  background-color: #ffffff;
+  width: 350px;
+  padding: 50px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 15px 5px rgba(89, 89, 89, 0.51);
+}
 .new-item label {
   width: 40vw;
   margin-top: 20px;
@@ -104,5 +115,12 @@ code {
 
 .new-item input,
 textarea {
-  margin-left: 20px;
+  width: 250px;
+  font-size: 14px;
+  /* input nie dziedziczy rozmiaru fonta bo rodzicach */
+  margin: 0 auto;
+  background-color: #fffbfb;
+  border: 2px sold #fffbfb;
+  border-radius: 5px;
+  padding: 10px;
 }

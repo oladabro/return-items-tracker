@@ -27,8 +27,9 @@ const CreateItem = () => {
   };
 
   return (
-    <form className='new-item' onSubmit={addItem}>
-      <div>
+    <div className='container'>
+      <form className='new-item' onSubmit={addItem}>
+        {/* <div> */}
         <label>Data</label>
         <input
           type='date'
@@ -36,8 +37,8 @@ const CreateItem = () => {
           value={date}
           onChange={(e) => setDate(e.target.value)}
         ></input>
-      </div>
-      <div>
+        {/* </div> */}
+        {/* <div> */}
         <label>Kwota</label>
         <input
           type='text'
@@ -46,8 +47,8 @@ const CreateItem = () => {
           step='.01'
           onChange={(e) => setAmount(e.target.value)}
         ></input>
-      </div>
-      <div>
+        {/* </div> */}
+        {/* <div> */}
         <label>Sklep</label>
         <input
           type='text'
@@ -55,8 +56,8 @@ const CreateItem = () => {
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
         ></input>
-      </div>
-      <div>
+        {/* </div> */}
+        {/* <div> */}
         <label>Opis</label>
         <textarea
           rows='4'
@@ -65,10 +66,11 @@ const CreateItem = () => {
           value={itemDescription}
           onChange={(e) => setItemDescription(e.target.value)}
         ></textarea>
-      </div>
+        {/* </div> */}
 
-      <button>Dodaj</button>
-    </form>
+        <button>Dodaj</button>
+      </form>
+    </div>
   );
 };
 
