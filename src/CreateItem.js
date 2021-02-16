@@ -26,47 +26,56 @@ const CreateItem = () => {
     setItemDescription('');
   };
 
+  const clearPlaceholder = (e) => {
+    e.target.placeholder = '';
+  };
+
   return (
     <div className='container'>
       <form className='new-item' onSubmit={addItem}>
-        {/* <div> */}
-        <label>Data</label>
         <input
           type='date'
           name='date'
           value={date}
           onChange={(e) => setDate(e.target.value)}
+          placeholder='date'
+          required
         ></input>
-        {/* </div> */}
-        {/* <div> */}
-        <label>Kwota</label>
+
         <input
           type='text'
           name='amount'
           value={amount}
           step='.01'
+          placeholder='kwota'
           onChange={(e) => setAmount(e.target.value)}
+          // onFocus={clearPlaceholder}
+          // onBlur={(e) => (e.target.placeholder = 'kwota')}
+          required
         ></input>
-        {/* </div> */}
-        {/* <div> */}
-        <label>Sklep</label>
+
         <input
           type='text'
           name='shopName'
           value={shopName}
           onChange={(e) => setShopName(e.target.value)}
+          placeholder='sklep'
+          // onFocus={clearPlaceholder}
+          // onBlur={(e) => (e.target.placeholder = 'sklep')}
+          required
         ></input>
-        {/* </div> */}
-        {/* <div> */}
-        <label>Opis</label>
+
         <textarea
           rows='4'
           // cols='20'
           name='desctiption'
           value={itemDescription}
           onChange={(e) => setItemDescription(e.target.value)}
+          // onFocus={clearPlaceholder}
+          placeholder='opis'
+          // onBlur={(e) => (e.target.placeholder = 'opis')}
+          required
         ></textarea>
-        {/* </div> */}
 
         <button>Dodaj</button>
       </form>

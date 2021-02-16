@@ -1,4 +1,3 @@
-import './App.css';
 import CreateItem from './CreateItem';
 import ListItems from './ListItems';
 import { ItemsContextProvider } from './ItemsContext';
@@ -10,6 +9,7 @@ function App() {
     <ItemsContextProvider>
       <div className='App'>
         <h1>Rzeczy zwrócone do sklepów</h1>
+
         <CreateItem />
         <ListItems />
         <CompletedItems />

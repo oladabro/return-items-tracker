@@ -6,25 +6,27 @@ const ListItems = () => {
   const { listOfItems, setListOfItems } = useContext(ItemsContext);
   return (
     <>
-      <div className='table-header'>
-        <p className='date'>Data</p>
-        <p className='amount'>Kwota</p>
-        <p className='shop'>Sklep</p>
-        <p className='description'>Opis</p>
-      </div>
+      <div className='table'>
+        <div className='table-header'>
+          <p className='date'>Data</p>
+          <p className='amount'>Kwota</p>
+          <p className='shop'>Sklep</p>
+          <p className='description'>Opis</p>
+        </div>
 
-      {listOfItems.map((item) => {
-        return (
-          <Item
-            date={item.date}
-            amount={item.amount}
-            shopName={item.shopName}
-            itemDescription={item.itemDescription}
-            key={item.id}
-            id={item.id}
-          />
-        );
-      })}
+        {listOfItems.map((item) => {
+          return (
+            <Item
+              date={item.date}
+              amount={item.amount}
+              shopName={item.shopName}
+              itemDescription={item.itemDescription}
+              key={item.id}
+              id={item.id}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };
