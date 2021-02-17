@@ -1,37 +1,69 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const ItemsContext = createContext();
 
 export const ItemsContextProvider = (props) => {
-  const [listOfItems, setListOfItems] = useState([
-    {
-      id: 1,
-      date: '2019-10-19',
-      amount: '440',
-      shopName: 'Massimo Dutti',
-      itemDescription: 'spodnie',
-    },
-    {
-      id: 2,
-      date: '2019-10-30',
-      amount: '200',
-      shopName: 'Deichman',
-      itemDescription: 'botki',
-    },
-    {
-      id: 3,
-      date: '2019-10-11',
-      amount: '250',
-      shopName: 'Polar Sport',
-      itemDescription: 'buty aku',
-    },
-  ]);
+  const [date, setDate] = useState('');
+  const [amount, setAmount] = useState('');
+  const [shopName, setShopName] = useState('');
+  const [itemDescription, setItemDescription] = useState('');
 
-  const [itemsCompleted, setItemsCompleted] = useState([]);
+  const [listOfItems, setListOfItems] = useState(() => {
+    const localData = localStorage.getItem('listOfItems');
+
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  const [itemsCompleted, setItemsCompleted] = useState(() => {
+    const localData = localStorage.getItem('itemsCompleted');
+
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('listOfItems', JSON.stringify(listOfItems));
+  }, [listOfItems]);
+
+  useEffect(() => {
+    localStorage.setItem('itemsCompleted', JSON.stringify(itemsCompleted));
+  }, [itemsCompleted]);
+
+  const addItem = (event) => {
+    event.preventDefault();
+
+    let newItem = {
+      id: listOfItems.length + 1,
+      date,
+      amount,
+      shopName,
+      itemDescription,
+    };
+
+    setListOfItems((prevListOfItems) => [...prevListOfItems, newItem]);
+
+    setDate('');
+    setAmount('');
+    setShopName('');
+    setItemDescription('');
+  };
 
   return (
     <ItemsContext.Provider
-      value={{ listOfItems, setListOfItems, itemsCompleted, setItemsCompleted }}
+      value={{
+        listOfItems,
+        setListOfItems,
+        itemsCompleted,
+        setItemsCompleted,
+        date,
+        setDate,
+        amount,
+        setAmount,
+        shopName,
+        setShopName,
+        itemDescription,
+        setItemDescription,
+        addItem,
+      }}
     >
       {props.children}
     </ItemsContext.Provider>
