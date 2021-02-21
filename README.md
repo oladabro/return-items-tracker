@@ -1,8 +1,18 @@
-# Getting Started with Create React App
+# my-recipes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Application for tracking returned goods. Helps to monitor money in transit.
+Consists of a form for entering item's name, value and details. Lists of open and cleared items.
+Data stored at local storage.
+
 <a href="https://oladabro.github.io/return-items-tracker/">Click here for demo</a>
+
+## Technologies
+
+- JS,
+- HTML
+- CSS
 
 ## Available Scripts
 
