@@ -10,7 +10,7 @@ Data stored at local storage.
 
 ## Technologies
 
-- JS,
+- ReactJS with useContext
 - HTML
 - CSS
 
